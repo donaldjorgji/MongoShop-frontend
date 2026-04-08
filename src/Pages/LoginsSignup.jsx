@@ -49,7 +49,7 @@ const LoginSignup = () => {
           if (data.role === "admin") {
             window.location.href = process.env.REACT_APP_ADMIN_URL;
           } else {
-            window.location.replace('/')
+            window.location.href = process.env.REACT_APP_APP_URL;
           }
         }, 1000)
 
@@ -87,7 +87,7 @@ const LoginSignup = () => {
         localStorage.setItem('auth-token', data.token)
 
         setTimeout(() => {
-          window.location.replace('/')
+          window.location.href = process.env.REACT_APP_APP_URL;
         }, 1000)
 
       } else {
@@ -117,7 +117,6 @@ const LoginSignup = () => {
 
         <div className="loginsignup-fields">
 
-          {/* USERNAME ONLY FOR SIGNUP */}
           {state === "Sign Up" && (
             <input
               name='username'
