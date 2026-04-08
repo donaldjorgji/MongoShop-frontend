@@ -1,0 +1,147 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10%;
+    min-height: 90vh;
+    gap: 40px;
+  
+    
+    background: linear-gradient(
+        180deg,
+        #ffd6b3 0%,
+        #ffe2cc 25%,
+        #fff1e6 55%,
+        #ffffff 100%
+    );
+  
+    border-radius: 30px;
+  }
+  
+  /* MAJTAS */
+  .hero-majtas {
+    flex: 1;
+  }
+  
+  /* 🔥 Titulli */
+  .hero-majtas h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #111;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  
+  /* 🔥 Teksti */
+  .hero-text p {
+    font-size: 24px;
+    margin: 6px 0;
+    color: #444;
+    font-weight: 600;
+  }
+  
+  /* Dora icon */
+  .hero-dora-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .hero-dora-icon img {
+    width: 38px;
+  }
+  
+  /* BUTTON */
+  .hero-btn {
+    margin-top: 35px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  
+    
+    background: #ff7a5c;
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+  
+    box-shadow: 0 6px 20px rgba(255, 122, 92, 0.3);
+  }
+  
+  .hero-btn img {
+    width: 20px;
+  }
+  
+  /* Hover */
+  .hero-btn:hover {
+    background: #e6684d;
+    transform: scale(1.05);
+  }
+  
+  /* DJATHTAS */
+  .hero-djathtas {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hero-djathtas img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    transition: 0.4s;
+  }
+  
+  /* Hover image */
+  .hero-djathtas img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* 📱 TABLET */
+  @media (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 5%;
+    }
+  
+    .hero-majtas h2 {
+      font-size: 36px;
+    }
+  
+    .hero-text p {
+      font-size: 20px;
+    }
+  
+    .hero-btn {
+      margin: 25px auto 0;
+    }
+  
+    .hero-djathtas img {
+      max-width: 300px;
+    }
+  }
+  
+  /* 📱 MOBILE */
+  @media (max-width: 500px) {
+    .hero {
+      padding: 40px 5%;
+    }
+  
+    .hero-majtas h2 {
+      font-size: 28px;
+    }
+  
+    .hero-text p {
+      font-size: 18px;
+    }
+  
+    .hero-btn {
+      font-size: 16px;
+      padding: 12px 22px;
+    }
+  }

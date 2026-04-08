@@ -1,0 +1,179 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    padding: 50px 20px;
+
+    background: linear-gradient(
+        180deg,
+        #ffd6b3 0%,
+        #ffe2cc 25%,
+        #fff1e6 55%,
+        #ffffff 100%
+    );
+
+    text-align: center;
+}
+
+/* ================= LOGO ================= */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔥 FIX: logo majtas, tekst djathtas */
+.footer-logo-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    cursor: default;
+}
+
+.footer-logo-link img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-logo-link p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #383838;
+
+    cursor: default;
+}
+
+/* ================= LINKS ================= */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    list-style: none;
+    gap: 30px;
+
+    color: #252525;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    cursor: default;
+    transition: 0.2s;
+}
+
+.footer-links li:hover {
+    color: #ff6a88;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.footer-social-icon {
+    display: flex;
+    gap: 12px;
+}
+
+/* ICON BOX */
+.footer-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #ffe5d9;
+    border: 1px solid #ffd6c2;
+
+    transition: 0.3s;
+}
+
+/* ICON */
+.footer-icons-container svg {
+    color: #ff6a88;
+}
+
+/* HOVER */
+.footer-icons-container:hover {
+    background: #ffd6c2;
+    transform: scale(1.1);
+}
+
+.footer-icons-container:hover svg {
+    color: #ff4c6a;
+}
+
+/* ================= COPYRIGHT ================= */
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    margin-bottom: 10px;
+
+    color: #1a1a1a;
+    font-size: 15px;
+}
+
+.footer-copyright hr {
+    width: 80%;
+    border: none;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+    .footer-logo-link p {
+        font-size: 26px;
+    }
+
+    .footer-links {
+        gap: 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer-logo-link {
+        gap: 8px;
+    }
+
+    .footer-logo-link img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-logo-link p {
+        font-size: 22px;
+    }
+
+    .footer-links {
+        gap: 12px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .footer-icons-container {
+        width: 36px;
+        height: 36px;
+    }
+}

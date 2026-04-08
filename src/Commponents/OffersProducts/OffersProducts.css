@@ -1,0 +1,129 @@
+/* CONTAINER */
+.offers-container {
+  padding: 60px 10%;
+  background: linear-gradient(180deg, #ffffff, #f7f7f7);
+}
+
+/* TITLE */
+.offers-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+/* SECTION */
+.offers-section {
+  margin-bottom: 60px;
+}
+
+.offers-section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding-left: 12px;
+  border-left: 4px solid #ff4d4f;
+  color: #333;
+}
+
+/* GRID */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.offer-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+  transition: all 0.3s ease;
+
+  text-align: center;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* IMAGE WRAPPER */
+.offer-image {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f5f5;
+  padding: 10px;
+}
+
+/* IMAGE */
+.offer-image img {
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+/* IMAGE HOVER */
+.offer-card:hover img {
+  transform: scale(1.08);
+}
+
+/* TEXT */
+.offer-card p {
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  font-size: 20px;
+  padding: 50px;
+}
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offers-title {
+    font-size: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .offers-container {
+    padding: 40px 5%;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offers-title {
+    font-size: 26px;
+  }
+
+  .offer-image {
+    height: 220px;
+  }
+}

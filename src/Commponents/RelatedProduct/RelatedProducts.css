@@ -1,0 +1,145 @@
+.relatedproducts {
+    width: 100%;
+    margin: 80px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  
+  /* TITULLI */
+  .relatedproducts h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .relatedproducts hr {
+    width: 80px;
+    height: 3px;
+    background: #000;
+    border: none;
+    margin: 0 auto 30px auto;
+    border-radius: 5px;
+  }
+  
+  /* PRODUKTET NE RRESHT (HORIZONTAL SCROLL) */
+  .relatedproducts-item {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  /* fsheh scrollbar */
+  .relatedproducts-item::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .relatedproducts-item::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+  
+  .relatedproducts-item::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* ITEM (nëse nuk e ke stiluar te komponenti Item) */
+  .relatedproducts-item .item {
+    min-width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .relatedproducts-item .item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* IMAGE */
+  .relatedproducts-item .item img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .relatedproducts-item .item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* TEXT */
+  .relatedproducts-item .item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* PRICES (nëse përdoren klasa) */
+  .item-price-new {
+    color: #e63946;
+    font-weight: bold;
+  }
+  
+  .item-price-old {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 13px;
+  }
+  
+  /* ========================= */
+  /* RESPONSIVE */
+  /* ========================= */
+  
+  /* LAPTOP */
+  @media (max-width: 1280px) {
+    .relatedproducts {
+      padding: 0 30px;
+    }
+  }
+  
+  /* TABLET */
+  @media (max-width: 1024px) {
+    .relatedproducts {
+      padding: 0 20px;
+    }
+  
+    .relatedproducts-item .item {
+      min-width: 200px;
+    }
+  }
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .relatedproducts {
+      padding: 0 15px;
+    }
+  
+    .relatedproducts-item {
+      gap: 15px;
+    }
+  
+    .relatedproducts h1 {
+      font-size: 22px;
+    }
+  
+    .relatedproducts-item .item {
+      min-width: 180px;
+    }
+  }
+  
+  /* SMALL MOBILE */
+  @media (max-width: 480px) {
+    .relatedproducts h1 {
+      font-size: 20px;
+    }
+  
+    .relatedproducts-item .item {
+      min-width: 160px;
+      padding: 10px;
+    }
+  }

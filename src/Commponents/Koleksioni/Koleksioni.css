@@ -1,0 +1,126 @@
+.koleksioni {
+    padding: 80px 10%;
+    text-align: center;
+    min-height: 100vh;
+  
+   
+    background: linear-gradient(
+      135deg,
+      #fff1eb 0%,
+      #ffe4da 45%,
+      #ffffff 100%
+    );
+  }
+  
+  /* TITULLI */
+  .koleksioni h1 {
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #222;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  
+  /* GRID */
+  .koleksion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+  
+  /* CARD */
+  .koleksion-card {
+    position: relative;
+    overflow: hidden;
+  
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+  
+    padding: 60px 25px;
+    border-radius: 22px;
+    cursor: pointer;
+  
+    transition: all 0.35s ease;
+  
+    /* 🌟 Shadow premium */
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.08),
+      0 5px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Gradient overlay hover */
+  .koleksion-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #ff7a5c, #ff9a8b);
+    transform: translateY(100%);
+    transition: 0.4s ease;
+    z-index: 0;
+  }
+  
+  .koleksion-card:hover::before {
+    transform: translateY(0);
+  }
+  
+  /* TEXT */
+  .koleksion-card h2,
+  .koleksion-card p {
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+  }
+  
+  .koleksion-card h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .koleksion-card p {
+    margin-top: 12px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* HOVER TEXT */
+  .koleksion-card:hover h2,
+  .koleksion-card:hover p {
+    color: white;
+  }
+  
+  /* HOVER EFFECT */
+  .koleksion-card:hover {
+    transform: translateY(-12px) scale(1.04);
+  
+    box-shadow:
+      0 15px 35px rgba(255, 122, 92, 0.25),
+      0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* 📱 TABLET */
+  @media (max-width: 900px) {
+    .koleksion-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+  
+    .koleksioni h1 {
+      font-size: 34px;
+    }
+  }
+  
+  /* 📱 MOBILE */
+  @media (max-width: 500px) {
+    .koleksion-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .koleksion-card {
+      padding: 45px 20px;
+    }
+  
+    .koleksioni h1 {
+      font-size: 28px;
+    }
+  }

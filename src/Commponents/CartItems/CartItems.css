@@ -1,0 +1,156 @@
+.cartitems {
+    margin: 100px 10%;
+    position: relative;
+}
+
+/* ALERT */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 250px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    z-index: 9999;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.4s ease, fadeOut 0.4s ease 2.6s forwards;
+}
+
+/* FIX ALERT TYPES */
+.custom-alert.success {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.custom-alert.error {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* ===================== */
+/* (TË GJITHA STILET E TJERA I LE SIÇ I KE) */
+/* ===================== */
+
+.cartitems hr {
+    height: 2px;
+    background: #e2e2e2;
+    border: 0;
+}
+
+.cartitems-format-main {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 0;
+    color: #454545;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cartitems-format {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.carticon-product-icon {
+    height: 55px;
+}
+
+.cartitems-remove-icon {
+    width: 12px;
+    margin: 0 30px;
+    cursor: pointer;
+}
+
+.cartitems-quantity {
+    width: 55px;
+    height: 45px;
+    border: 2px solid #ebebeb;
+    background: #fff;
+    text-align: center;
+}
+
+.cartitems-down {
+    display: flex;
+    margin: 100px 0;
+    gap: 60px;
+}
+
+.cartitems-total {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.cartitems-total-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.cartitems-total button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    background: #ff7a5c;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cartitems-total button:hover {
+    background: #ff5a3c;
+}
+
+.cartitems-promocode {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cartitems-promobox {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    background: #eaeaea;
+    border-radius: 6px;
+}
+
+.cartitems-promobox input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    padding-left: 20px;
+}
+
+.cartitems-promobox button {
+    width: 130px;
+    height: 100%;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

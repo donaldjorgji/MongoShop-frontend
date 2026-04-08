@@ -1,0 +1,147 @@
+.shopcategory-banner{
+    display: block;
+    margin: 30px auto;
+    width: 80%;
+}
+
+/* TOP BAR */
+.shopcategory-indexSort{
+    display: flex;
+    margin: 0px 170px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* TEXT */
+.shopcategory-indexSort p span{
+    font-weight: 600;
+}
+
+/* SORT BOX */
+.shopcategory-sort{
+    position: relative;
+    padding: 10px 16px;
+    border-radius: 40px;
+    border: 1px solid #888;
+    background: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* HEADER */
+.sort-header{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* DROPDOWN */
+.sort-dropdown{
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 140px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.sort-dropdown div{
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.sort-dropdown div:hover{
+    background: #f2f2f2;
+}
+
+/* PRODUCTS GRID */
+.shopcategory-products{
+    width: 90%;
+    max-width: 1360px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* LOAD MORE */
+.shopcategory-meshume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    width: 200px;
+    height: 60px;
+    border-radius: 75px;
+    background: #ededed;
+    color: #787878;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shopcategory-meshume:hover{
+    background: #ddd;
+}
+
+/* TABLET */
+@media (max-width: 1280px) {
+    .shopcategory-banner{
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .shopcategory-indexSort{
+        width: 90%;
+        margin: auto;
+    }
+
+    .shopcategory-sort{
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .shopcategory-indexSort p{
+        font-size: 12px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+    .shopcategory-banner{
+        width: 95%;
+    }
+
+    .shopcategory-indexSort{
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px auto;
+    }
+
+    .shopcategory-sort{
+        width: 100%;
+        text-align: center;
+    }
+
+    .sort-dropdown{
+        width: 100%;
+        right: 0;
+    }
+
+    .shopcategory-meshume{
+        margin: 60px auto;
+        width: 150px;
+        height: 40px;
+        font-size: 13px;
+    }
+}
