@@ -9,7 +9,7 @@ const OffersProducts = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch('http://localhost:4001/allproducts')
+    fetch(`${process.env.REACT_APP_API_URL}/allproducts`)
       .then(res => res.json())
       .then(data => {
         setProducts(data)
@@ -25,7 +25,6 @@ const OffersProducts = () => {
   const meshkuj = products.filter(p => p.category === "meshkuj").slice(0, 3)
   const femije = products.filter(p => p.category === "femije").slice(0, 3)
 
-  
   const handleClick = (id) => {
     navigate(`/product/${id}`)
     window.scrollTo(0, 0)

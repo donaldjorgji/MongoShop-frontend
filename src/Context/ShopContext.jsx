@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import "./ShopContext.css"; 
+import "./ShopContext.css";
 
 export const ShopContext = createContext(null);
 
@@ -11,18 +11,19 @@ const getDefaultCart = () => {
   return cart;
 };
 
+// ✅ CORRECT ENV FOR CRA
+const API_URL = process.env.REACT_APP_API_URL;
+
 const ShopContextProvider = (props) => {
   const [all_product, setAll_Product] = useState([]);
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
-  // 🔥 ALERT STATE
   const [alert, setAlert] = useState({
     message: "",
     type: "",
     visible: false,
   });
 
-  // 🔥 ALERT FUNCTION
   const showAlert = (message, type = "error") => {
     setAlert({ message, type, visible: true });
 
@@ -31,12 +32,20 @@ const ShopContextProvider = (props) => {
     }, 3000);
   };
 
+  // ✅ GET ALL PRODUCTS
   useEffect(() => {
-    fetch("http://localhost:4001/allproducts")
+    fetch(`${API_URL}/allproducts`)
       .then((response) => response.json())
-      .then((data) => setAll_Product(data));
+      .then((data) => {
+        console.log("PRODUCTS:", data);
+        setAll_Product(data);
+      })
+      .catch((err) => {
+        console.error("ERROR FETCHING PRODUCTS:", err);
+      });
   }, []);
 
+  // ✅ ADD TO CART
   const addToCart = (itemId) => {
     const token = localStorage.getItem("auth-token");
 
@@ -50,7 +59,7 @@ const ShopContextProvider = (props) => {
       [itemId]: (prev[itemId] || 0) + 1,
     }));
 
-    fetch("http://localhost:4001/addtocart", {
+    fetch(`${API_URL}/addtocart`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -63,6 +72,7 @@ const ShopContextProvider = (props) => {
     showAlert("Produkti i shtuar ne karte", "success");
   };
 
+  // ✅ REMOVE FROM CART
   const removeFromCart = (itemId) => {
     const token = localStorage.getItem("auth-token");
 
@@ -76,7 +86,7 @@ const ShopContextProvider = (props) => {
       [itemId]: Math.max((prev[itemId] || 0) - 1, 0),
     }));
 
-    fetch("http://localhost:4001/removefromcart", {
+    fetch(`${API_URL}/removefromcart`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -89,28 +99,35 @@ const ShopContextProvider = (props) => {
     showAlert("Produkti i hequr nga karta", "success");
   };
 
+  // ✅ TOTAL AMOUNT
   const getTotalCartAmount = () => {
     let totalAmount = 0;
+
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = all_product.find(
           (product) => product.id === Number(item)
         );
+
         if (itemInfo) {
           totalAmount += cartItems[item] * itemInfo.new_price;
         }
       }
     }
+
     return totalAmount;
   };
 
+  // ✅ TOTAL ITEMS
   const getTotalCartItems = () => {
     let totalItem = 0;
+
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         totalItem += cartItems[item];
       }
     }
+
     return totalItem;
   };
 
@@ -127,7 +144,6 @@ const ShopContextProvider = (props) => {
     <ShopContext.Provider value={contextValue}>
       {props.children}
 
-      {/* 🔥 TOAST ALERT */}
       {alert.visible && (
         <div className={`toast ${alert.type}`}>
           <span className="toast-message">{alert.message}</span>

@@ -27,7 +27,7 @@ const LoginSignup = () => {
     try {
       setLoading(true)
 
-      const response = await fetch('http://localhost:4001/login', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -47,7 +47,7 @@ const LoginSignup = () => {
 
         setTimeout(() => {
           if (data.role === "admin") {
-            window.location.href = "http://localhost:5173"
+            window.location.href = process.env.REACT_APP_ADMIN_URL;
           } else {
             window.location.replace('/')
           }
@@ -69,7 +69,7 @@ const LoginSignup = () => {
     try {
       setLoading(true)
 
-      const response = await fetch('http://localhost:4001/signup', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
