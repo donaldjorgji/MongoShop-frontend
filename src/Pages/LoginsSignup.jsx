@@ -17,6 +17,14 @@ const LoginSignup = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  const resetForm = () => {
+    setFormData({
+      username: "",
+      email: "",
+      password: ""
+    })
+  }
+
   const showAlert = (type, message) => {
     setAlert({ type, message })
     setTimeout(() => setAlert(null), 3000)
@@ -102,7 +110,7 @@ const LoginSignup = () => {
   }
 
   return (
-    <div className='loginsignup'>
+    <div className='loginsignup' autoComplete="off">
 
       {/* ALERT */}
       {alert && (
@@ -124,7 +132,7 @@ const LoginSignup = () => {
               onChange={changeHandler}
               type="text"
               placeholder='Your Name'
-              autoComplete="off"
+              autoComplete="new-username"
             />
           )}
 
@@ -134,7 +142,7 @@ const LoginSignup = () => {
             onChange={changeHandler}
             type="email"
             placeholder='Email Address'
-            autoComplete="off"
+            autoComplete="new-email"
           />
 
           <input
@@ -143,7 +151,7 @@ const LoginSignup = () => {
             onChange={changeHandler}
             type="password"
             placeholder='Password'
-            autoComplete="off"
+            autoComplete="new-password"
           />
 
         </div>
@@ -158,12 +166,16 @@ const LoginSignup = () => {
         {state === "Login" ? (
           <p className="loginsignup-login">
             Create an account?
-            <span onClick={() => setState("Sign Up")}> Click here</span>
+            <span onClick={() => { setState("Sign Up"); resetForm() }}>
+              {" "}Click here
+            </span>
           </p>
         ) : (
           <p className="loginsignup-login">
             Already have an account?
-            <span onClick={() => setState("Login")}> Login here</span>
+            <span onClick={() => { setState("Login"); resetForm() }}>
+              {" "}Login here
+            </span>
           </p>
         )}
 
